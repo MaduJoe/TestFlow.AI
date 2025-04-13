@@ -1,3 +1,4 @@
+
 # 🧪 QA Automation Framework
 
 **QA Automation Framework**는 테스트 케이스의 생성부터 실행, 결과 분석, 보고서 생성까지 QA 업무 전반을 자동화하는 플랫폼입니다.  
@@ -88,3 +89,55 @@ pip install -r requirements.txt
 
 # Node.js 의존성 설치
 npm install
+```
+
+### ▶️ 실행
+
+```bash
+# Streamlit UI 실행
+streamlit run qa_ui/app.py
+
+# API 서버 실행
+python api_server/app.py
+
+# 백엔드 로직 서버 실행
+python app/main.py 
+```
+
+---
+
+## 🛠 기술 스택
+
+| 영역 | 기술 |
+|------|------|
+| Backend | Python, FastAPI |
+| Frontend | Streamlit |
+| AI | Google Gemini API |
+| Test Automation | Requests, Newman (Postman CLI) |
+| Data Visualization | Plotly, Altair |
+| Integration | JIRA API, Slack Webhooks |
+
+---
+
+## 🙌 기여하기
+
+Pull Request와 Issue 환영합니다!  
+기여 전에는 간단한 설명이나 사전 논의해 주시면 더욱 좋아요.
+
+---
+
+## 📄 라이센스
+
+MIT License 하에 배포됩니다.  
+자세한 내용은 [LICENSE](LICENSE) 파일을 확인해주세요.
+
+---
+
+## 📬 연락처
+
+**Jaekeun Cho**  
+🔗 [GitHub](https://github.com/MaduJoe)  
+📧 jaekeunv@gmail.com  
+📁 프로젝트 링크: [github.com/MaduJoe/kakaofy-qa](https://github.com/MaduJoe/kakaofy-qa)
+
+---
