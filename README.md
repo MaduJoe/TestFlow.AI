@@ -67,7 +67,10 @@ AI 기반 테스트 케이스 생성 기능과 Postman 기반의 자동화 테�
 
 | 연동설정 | 연동결과 |
 |----------|---------|
-| ![설정](demo-images/7.1%20설정.png) | ![설정](demo-images/7.2%20설정.png) |
+<div style="display: flex; gap: 10px;">
+  <img src="demo-images/7.1 설정.png" alt="설정1" width="50%">
+  <img src="demo-images/7.2 설정.png" alt="설정2" width="50%">
+</div>
   
 👉 JIRA, Slack 등 외부 시스템 연동 관리
 
