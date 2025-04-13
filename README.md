@@ -94,6 +94,12 @@ npm install
 ```bash
 # Streamlit UI 실행
 streamlit run qa_ui/app.py
+
+# API Server 실행
+python api_server/app.py
+
+# Backend Server 실행
+python app/main.py 
 ```
 
 ## 사용된 기술
