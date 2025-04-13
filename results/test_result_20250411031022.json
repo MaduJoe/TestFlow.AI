@@ -1,0 +1,1206 @@
+{
+  "id": "20250411031022",
+  "execution_time": "2025-04-11 03:10:22",
+  "env": "개발",
+  "postman_result": {
+    "status": "success",
+    "output": "📊 테스트 실행 결과\n실행 시간: 2025-04-11 03:10:22\n총 요청 수: 4\n성공: 0\n실패: 0\n\n📝 상세 결과:\n\n1. POST - reset\n   URL: \n   상태 코드: 200\n   상태: ✅ 성공\n\n2. POST - register\n   URL: \n   상태 코드: 200\n   상태: ✅ 성공\n\n3. GET - users\n   URL: \n   상태 코드: 200\n   상태: ✅ 성공\n\n4. POST - login\n   URL: \n   상태 코드: 200\n   상태: ✅ 성공",
+    "report_path": "C:\\Users\\jkcho\\kakaofy-qa\\logs\\postman_result.json",
+    "raw_result": {
+      "collection": {
+        "_": {
+          "postman_id": "ed70a97f-1422-4019-8f09-44f66f122df9",
+          "exporter_id": "32150883"
+        },
+        "item": [
+          {
+            "id": "3100596a-fa60-40fb-ac44-2cfb6f2730fc",
+            "name": "reset",
+            "request": {
+              "url": {
+                "protocol": "http",
+                "port": "5000",
+                "path": [
+                  "reset"
+                ],
+                "host": [
+                  "localhost"
+                ],
+                "query": [],
+                "variable": []
+              },
+              "method": "POST",
+              "body": {
+                "mode": "raw",
+                "raw": "",
+                "options": {
+                  "raw": {
+                    "language": "json"
+                  }
+                }
+              }
+            },
+            "response": [],
+            "event": [],
+            "protocolProfileBehavior": {
+              "disabledSystemHeaders": {}
+            }
+          },
+          {
+            "id": "e15e800b-3769-4a3f-a81b-4302c2deffd5",
+            "name": "register",
+            "request": {
+              "url": {
+                "protocol": "http",
+                "port": "5000",
+                "path": [
+                  "register"
+                ],
+                "host": [
+                  "localhost"
+                ],
+                "query": [],
+                "variable": []
+              },
+              "method": "POST",
+              "body": {
+                "mode": "raw",
+                "raw": "// {\r\n//   \"email\": \"test@example.com\",\r\n//   \"password\": \"1234\"\r\n// }\r\n\r\n{\r\n  \"status\": \"success\",\r\n  \"email\": \"qauser@example.com\",\r\n  \"password\": \"1234\"\r\n}\r\n",
+                "options": {
+                  "raw": {
+                    "language": "json"
+                  }
+                }
+              }
+            },
+            "response": [],
+            "event": [
+              {
+                "listen": "test",
+                "script": {
+                  "id": "792a2232-9134-4857-b726-fcb024c7b7f7",
+                  "type": "text/javascript",
+                  "packages": {},
+                  "exec": [
+                    "// 요청 본문에서 직접 파싱\r",
+                    "const requestData = JSON.parse(pm.request.body.raw);\r",
+                    "console.log(requestData);\r",
+                    "\r",
+                    "// 변수 저장\r",
+                    "pm.collectionVariables.set(\"email\", requestData.email);\r",
+                    "pm.collectionVariables.set(\"password\", requestData.password);\r",
+                    ""
+                  ],
+                  "_lastExecutionId": "31cdb48c-c9b5-4ed3-92a8-00bead4b5925"
+                }
+              },
+              {
+                "listen": "prerequest",
+                "script": {
+                  "id": "329f2ef8-2ef8-4180-ad01-177ac492d37f",
+                  "type": "text/javascript",
+                  "packages": {},
+                  "exec": [
+                    ""
+                  ],
+                  "_lastExecutionId": "45a9774e-e372-4956-a68f-c547a5e1ec27"
+                }
+              }
+            ],
+            "protocolProfileBehavior": {
+              "disabledSystemHeaders": {}
+            }
+          },
+          {
+            "id": "a73b67ee-ba01-4682-9325-79dd31322813",
+            "name": "users",
+            "request": {
+              "url": {
+                "protocol": "http",
+                "port": "5000",
+                "path": [
+                  "users"
+                ],
+                "host": [
+                  "localhost"
+                ],
+                "query": [],
+                "variable": []
+              },
+              "method": "GET",
+              "body": {
+                "mode": "raw",
+                "raw": "{\r\n  \"email\": \"test@example.com\",\r\n  \"password\": \"1234\"\r\n}",
+                "options": {
+                  "raw": {
+                    "language": "json"
+                  }
+                }
+              }
+            },
+            "response": [],
+            "event": [],
+            "protocolProfileBehavior": {
+              "disableBodyPruning": true,
+              "disabledSystemHeaders": {}
+            }
+          },
+          {
+            "id": "c10861cb-47a2-48fa-95e3-c9860f3c3632",
+            "name": "login",
+            "request": {
+              "url": {
+                "protocol": "http",
+                "port": "5000",
+                "path": [
+                  "login"
+                ],
+                "host": [
+                  "localhost"
+                ],
+                "query": [],
+                "variable": []
+              },
+              "method": "POST",
+              "body": {
+                "mode": "raw",
+                "raw": "{\r\n  \"email\": \"{{email}}\",\r\n  \"password\": \"{{password}}\"\r\n}\r\n",
+                "options": {
+                  "raw": {
+                    "language": "json"
+                  }
+                }
+              }
+            },
+            "response": [],
+            "event": [],
+            "protocolProfileBehavior": {
+              "disabledSystemHeaders": {}
+            }
+          }
+        ],
+        "event": [
+          {
+            "listen": "prerequest",
+            "script": {
+              "id": "93b00909-2950-437d-a2e7-ee4c140ac710",
+              "type": "text/javascript",
+              "packages": {},
+              "exec": [
+                ""
+              ],
+              "_lastExecutionId": "3fc38367-8355-4c76-b0a3-a53bae3dab3e"
+            }
+          },
+          {
+            "listen": "test",
+            "script": {
+              "id": "02fc6fda-e210-4b2e-96aa-bb487017918e",
+              "type": "text/javascript",
+              "packages": {},
+              "exec": [
+                ""
+              ],
+              "_lastExecutionId": "6e13b67e-800c-40dc-88a0-d271b669b739"
+            }
+          }
+        ],
+        "variable": [
+          {
+            "type": "string",
+            "value": "",
+            "key": "email"
+          },
+          {
+            "type": "string",
+            "value": "",
+            "key": "password"
+          }
+        ],
+        "info": {
+          "_postman_id": "ed70a97f-1422-4019-8f09-44f66f122df9",
+          "name": "kakao_qa_collection",
+          "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+        }
+      },
+      "environment": {
+        "id": "94f62c0d-ed64-44c7-82f9-1d90d44b97c0",
+        "values": []
+      },
+      "globals": {
+        "id": "518ef282-348e-4def-ba32-42a639587bca",
+        "values": []
+      },
+      "run": {
+        "stats": {
+          "iterations": {
+            "total": 1,
+            "pending": 0,
+            "failed": 0
+          },
+          "items": {
+            "total": 4,
+            "pending": 0,
+            "failed": 0
+          },
+          "scripts": {
+            "total": 10,
+            "pending": 0,
+            "failed": 0
+          },
+          "prerequests": {
+            "total": 4,
+            "pending": 0,
+            "failed": 0
+          },
+          "requests": {
+            "total": 4,
+            "pending": 0,
+            "failed": 0
+          },
+          "tests": {
+            "total": 4,
+            "pending": 0,
+            "failed": 0
+          },
+          "assertions": {
+            "total": 0,
+            "pending": 0,
+            "failed": 0
+          },
+          "testScripts": {
+            "total": 5,
+            "pending": 0,
+            "failed": 0
+          },
+          "prerequestScripts": {
+            "total": 5,
+            "pending": 0,
+            "failed": 0
+          }
+        },
+        "timings": {
+          "responseAverage": 11.75,
+          "responseMin": 6,
+          "responseMax": 22,
+          "responseSd": 6.098155458825235,
+          "dnsAverage": 0,
+          "dnsMin": 0,
+          "dnsMax": 0,
+          "dnsSd": 0,
+          "firstByteAverage": 0,
+          "firstByteMin": 0,
+          "firstByteMax": 0,
+          "firstByteSd": 0,
+          "started": 1744308622440,
+          "completed": 1744308622796
+        },
+        "executions": [
+          {
+            "cursor": {
+              "position": 0,
+              "iteration": 0,
+              "length": 4,
+              "cycles": 1,
+              "empty": false,
+              "eof": false,
+              "bof": true,
+              "cr": false,
+              "ref": "2a0d7bef-4c53-44a3-ada5-635e779bc50f",
+              "httpRequestId": "f05f3d81-b53b-4e26-a80a-42c90df31438"
+            },
+            "item": {
+              "id": "3100596a-fa60-40fb-ac44-2cfb6f2730fc",
+              "name": "reset",
+              "request": {
+                "url": {
+                  "protocol": "http",
+                  "port": "5000",
+                  "path": [
+                    "reset"
+                  ],
+                  "host": [
+                    "localhost"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "response": [],
+              "event": [],
+              "protocolProfileBehavior": {
+                "disabledSystemHeaders": {}
+              }
+            },
+            "request": {
+              "url": {
+                "protocol": "http",
+                "port": "5000",
+                "path": [
+                  "reset"
+                ],
+                "host": [
+                  "localhost"
+                ],
+                "query": [],
+                "variable": []
+              },
+              "header": [
+                {
+                  "key": "User-Agent",
+                  "value": "PostmanRuntime/7.39.1",
+                  "system": true
+                },
+                {
+                  "key": "Accept",
+                  "value": "*/*",
+                  "system": true
+                },
+                {
+                  "key": "Cache-Control",
+                  "value": "no-cache",
+                  "system": true
+                },
+                {
+                  "key": "Postman-Token",
+                  "value": "0abf6d1c-db14-4b98-82ce-033d9ac850a0",
+                  "system": true
+                },
+                {
+                  "key": "Host",
+                  "value": "localhost:5000",
+                  "system": true
+                },
+                {
+                  "key": "Accept-Encoding",
+                  "value": "gzip, deflate, br",
+                  "system": true
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive",
+                  "system": true
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "0",
+                  "system": true
+                }
+              ],
+              "method": "POST",
+              "body": {
+                "mode": "raw",
+                "raw": "",
+                "options": {
+                  "raw": {
+                    "language": "json"
+                  }
+                }
+              }
+            },
+            "response": {
+              "id": "f3277420-d890-4758-94ac-189be3edde62",
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Server",
+                  "value": "Werkzeug/3.1.3 Python/3.13.2"
+                },
+                {
+                  "key": "Date",
+                  "value": "Thu, 10 Apr 2025 18:10:22 GMT"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "53"
+                },
+                {
+                  "key": "Connection",
+                  "value": "close"
+                }
+              ],
+              "stream": {
+                "type": "Buffer",
+                "data": [
+                  123,
+                  10,
+                  32,
+                  32,
+                  34,
+                  109,
+                  101,
+                  115,
+                  115,
+                  97,
+                  103,
+                  101,
+                  34,
+                  58,
+                  32,
+                  34,
+                  68,
+                  97,
+                  116,
+                  97,
+                  32,
+                  114,
+                  101,
+                  115,
+                  101,
+                  116,
+                  34,
+                  44,
+                  10,
+                  32,
+                  32,
+                  34,
+                  115,
+                  116,
+                  97,
+                  116,
+                  117,
+                  115,
+                  34,
+                  58,
+                  32,
+                  34,
+                  115,
+                  117,
+                  99,
+                  99,
+                  101,
+                  115,
+                  115,
+                  34,
+                  10,
+                  125,
+                  10
+                ]
+              },
+              "cookie": [],
+              "responseTime": 22,
+              "responseSize": 53
+            },
+            "id": "3100596a-fa60-40fb-ac44-2cfb6f2730fc"
+          },
+          {
+            "cursor": {
+              "ref": "d6763a66-0bdf-49a3-804d-ebd3824bd26e",
+              "length": 4,
+              "cycles": 1,
+              "position": 1,
+              "iteration": 0,
+              "httpRequestId": "766e2ee6-c92a-4f0c-8b0e-bcbed2a86c77"
+            },
+            "item": {
+              "id": "e15e800b-3769-4a3f-a81b-4302c2deffd5",
+              "name": "register",
+              "request": {
+                "url": {
+                  "protocol": "http",
+                  "port": "5000",
+                  "path": [
+                    "register"
+                  ],
+                  "host": [
+                    "localhost"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "// {\r\n//   \"email\": \"test@example.com\",\r\n//   \"password\": \"1234\"\r\n// }\r\n\r\n{\r\n  \"status\": \"success\",\r\n  \"email\": \"qauser@example.com\",\r\n  \"password\": \"1234\"\r\n}\r\n",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "response": [],
+              "event": [
+                {
+                  "listen": "test",
+                  "script": {
+                    "id": "792a2232-9134-4857-b726-fcb024c7b7f7",
+                    "type": "text/javascript",
+                    "packages": {},
+                    "exec": [
+                      "// 요청 본문에서 직접 파싱\r",
+                      "const requestData = JSON.parse(pm.request.body.raw);\r",
+                      "console.log(requestData);\r",
+                      "\r",
+                      "// 변수 저장\r",
+                      "pm.collectionVariables.set(\"email\", requestData.email);\r",
+                      "pm.collectionVariables.set(\"password\", requestData.password);\r",
+                      ""
+                    ],
+                    "_lastExecutionId": "31cdb48c-c9b5-4ed3-92a8-00bead4b5925"
+                  }
+                },
+                {
+                  "listen": "prerequest",
+                  "script": {
+                    "id": "329f2ef8-2ef8-4180-ad01-177ac492d37f",
+                    "type": "text/javascript",
+                    "packages": {},
+                    "exec": [
+                      ""
+                    ],
+                    "_lastExecutionId": "45a9774e-e372-4956-a68f-c547a5e1ec27"
+                  }
+                }
+              ],
+              "protocolProfileBehavior": {
+                "disabledSystemHeaders": {}
+              }
+            },
+            "request": {
+              "url": {
+                "protocol": "http",
+                "port": "5000",
+                "path": [
+                  "register"
+                ],
+                "host": [
+                  "localhost"
+                ],
+                "query": [],
+                "variable": []
+              },
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json",
+                  "system": true
+                },
+                {
+                  "key": "User-Agent",
+                  "value": "PostmanRuntime/7.39.1",
+                  "system": true
+                },
+                {
+                  "key": "Accept",
+                  "value": "*/*",
+                  "system": true
+                },
+                {
+                  "key": "Cache-Control",
+                  "value": "no-cache",
+                  "system": true
+                },
+                {
+                  "key": "Postman-Token",
+                  "value": "dd1c38e6-cf62-4e36-be17-5ea004a4a89a",
+                  "system": true
+                },
+                {
+                  "key": "Host",
+                  "value": "localhost:5000",
+                  "system": true
+                },
+                {
+                  "key": "Accept-Encoding",
+                  "value": "gzip, deflate, br",
+                  "system": true
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive",
+                  "system": true
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "92",
+                  "system": true
+                }
+              ],
+              "method": "POST",
+              "body": {
+                "mode": "raw",
+                "raw": "\n\n\n\n\r\n{\r\n  \"status\": \"success\",\r\n  \"email\": \"qauser@example.com\",\r\n  \"password\": \"1234\"\r\n}\r\n",
+                "options": {
+                  "raw": {
+                    "language": "json"
+                  }
+                }
+              }
+            },
+            "response": {
+              "id": "28c65753-f074-45f8-ad75-61ce613ebb95",
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Server",
+                  "value": "Werkzeug/3.1.3 Python/3.13.2"
+                },
+                {
+                  "key": "Date",
+                  "value": "Thu, 10 Apr 2025 18:10:22 GMT"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "58"
+                },
+                {
+                  "key": "Connection",
+                  "value": "close"
+                }
+              ],
+              "stream": {
+                "type": "Buffer",
+                "data": [
+                  123,
+                  10,
+                  32,
+                  32,
+                  34,
+                  109,
+                  101,
+                  115,
+                  115,
+                  97,
+                  103,
+                  101,
+                  34,
+                  58,
+                  32,
+                  34,
+                  85,
+                  115,
+                  101,
+                  114,
+                  32,
+                  114,
+                  101,
+                  103,
+                  105,
+                  115,
+                  116,
+                  101,
+                  114,
+                  101,
+                  100,
+                  34,
+                  44,
+                  10,
+                  32,
+                  32,
+                  34,
+                  115,
+                  116,
+                  97,
+                  116,
+                  117,
+                  115,
+                  34,
+                  58,
+                  32,
+                  34,
+                  115,
+                  117,
+                  99,
+                  99,
+                  101,
+                  115,
+                  115,
+                  34,
+                  10,
+                  125,
+                  10
+                ]
+              },
+              "cookie": [],
+              "responseTime": 9,
+              "responseSize": 58
+            },
+            "id": "e15e800b-3769-4a3f-a81b-4302c2deffd5"
+          },
+          {
+            "cursor": {
+              "ref": "cf5e8fbc-5b67-4de0-85e3-761f79287159",
+              "length": 4,
+              "cycles": 1,
+              "position": 2,
+              "iteration": 0,
+              "httpRequestId": "30f91421-f55e-4721-8394-fb691017b8c2"
+            },
+            "item": {
+              "id": "a73b67ee-ba01-4682-9325-79dd31322813",
+              "name": "users",
+              "request": {
+                "url": {
+                  "protocol": "http",
+                  "port": "5000",
+                  "path": [
+                    "users"
+                  ],
+                  "host": [
+                    "localhost"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "method": "GET",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n  \"email\": \"test@example.com\",\r\n  \"password\": \"1234\"\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "response": [],
+              "event": [],
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true,
+                "disabledSystemHeaders": {}
+              }
+            },
+            "request": {
+              "url": {
+                "protocol": "http",
+                "port": "5000",
+                "path": [
+                  "users"
+                ],
+                "host": [
+                  "localhost"
+                ],
+                "query": [],
+                "variable": []
+              },
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json",
+                  "system": true
+                },
+                {
+                  "key": "User-Agent",
+                  "value": "PostmanRuntime/7.39.1",
+                  "system": true
+                },
+                {
+                  "key": "Accept",
+                  "value": "*/*",
+                  "system": true
+                },
+                {
+                  "key": "Cache-Control",
+                  "value": "no-cache",
+                  "system": true
+                },
+                {
+                  "key": "Postman-Token",
+                  "value": "509a1ee2-ff76-4f1e-88ac-90726353a1c1",
+                  "system": true
+                },
+                {
+                  "key": "Host",
+                  "value": "localhost:5000",
+                  "system": true
+                },
+                {
+                  "key": "Accept-Encoding",
+                  "value": "gzip, deflate, br",
+                  "system": true
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive",
+                  "system": true
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "58",
+                  "system": true
+                }
+              ],
+              "method": "GET",
+              "body": {
+                "mode": "raw",
+                "raw": "{\r\n  \"email\": \"test@example.com\",\r\n  \"password\": \"1234\"\r\n}",
+                "options": {
+                  "raw": {
+                    "language": "json"
+                  }
+                }
+              }
+            },
+            "response": {
+              "id": "5941ccac-dda1-4d8d-b2f8-5c11a1105b30",
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Server",
+                  "value": "Werkzeug/3.1.3 Python/3.13.2"
+                },
+                {
+                  "key": "Date",
+                  "value": "Thu, 10 Apr 2025 18:10:22 GMT"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "95"
+                },
+                {
+                  "key": "Connection",
+                  "value": "close"
+                }
+              ],
+              "stream": {
+                "type": "Buffer",
+                "data": [
+                  91,
+                  10,
+                  32,
+                  32,
+                  123,
+                  10,
+                  32,
+                  32,
+                  32,
+                  32,
+                  34,
+                  101,
+                  109,
+                  97,
+                  105,
+                  108,
+                  34,
+                  58,
+                  32,
+                  34,
+                  113,
+                  97,
+                  117,
+                  115,
+                  101,
+                  114,
+                  64,
+                  101,
+                  120,
+                  97,
+                  109,
+                  112,
+                  108,
+                  101,
+                  46,
+                  99,
+                  111,
+                  109,
+                  34,
+                  44,
+                  10,
+                  32,
+                  32,
+                  32,
+                  32,
+                  34,
+                  112,
+                  97,
+                  115,
+                  115,
+                  119,
+                  111,
+                  114,
+                  100,
+                  34,
+                  58,
+                  32,
+                  34,
+                  49,
+                  50,
+                  51,
+                  52,
+                  34,
+                  44,
+                  10,
+                  32,
+                  32,
+                  32,
+                  32,
+                  34,
+                  115,
+                  116,
+                  97,
+                  116,
+                  117,
+                  115,
+                  34,
+                  58,
+                  32,
+                  34,
+                  115,
+                  117,
+                  99,
+                  99,
+                  101,
+                  115,
+                  115,
+                  34,
+                  10,
+                  32,
+                  32,
+                  125,
+                  10,
+                  93,
+                  10
+                ]
+              },
+              "cookie": [],
+              "responseTime": 6,
+              "responseSize": 95
+            },
+            "id": "a73b67ee-ba01-4682-9325-79dd31322813"
+          },
+          {
+            "cursor": {
+              "ref": "c484f37e-34dd-499f-b491-342611e3bfad",
+              "length": 4,
+              "cycles": 1,
+              "position": 3,
+              "iteration": 0,
+              "httpRequestId": "81ab97e7-2759-4196-afd0-17f7a464a5c2"
+            },
+            "item": {
+              "id": "c10861cb-47a2-48fa-95e3-c9860f3c3632",
+              "name": "login",
+              "request": {
+                "url": {
+                  "protocol": "http",
+                  "port": "5000",
+                  "path": [
+                    "login"
+                  ],
+                  "host": [
+                    "localhost"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n  \"email\": \"{{email}}\",\r\n  \"password\": \"{{password}}\"\r\n}\r\n",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "response": [],
+              "event": [],
+              "protocolProfileBehavior": {
+                "disabledSystemHeaders": {}
+              }
+            },
+            "request": {
+              "url": {
+                "protocol": "http",
+                "port": "5000",
+                "path": [
+                  "login"
+                ],
+                "host": [
+                  "localhost"
+                ],
+                "query": [],
+                "variable": []
+              },
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json",
+                  "system": true
+                },
+                {
+                  "key": "User-Agent",
+                  "value": "PostmanRuntime/7.39.1",
+                  "system": true
+                },
+                {
+                  "key": "Accept",
+                  "value": "*/*",
+                  "system": true
+                },
+                {
+                  "key": "Cache-Control",
+                  "value": "no-cache",
+                  "system": true
+                },
+                {
+                  "key": "Postman-Token",
+                  "value": "16ff4b97-e2c8-4b53-b5d3-5aa8bf6bf309",
+                  "system": true
+                },
+                {
+                  "key": "Host",
+                  "value": "localhost:5000",
+                  "system": true
+                },
+                {
+                  "key": "Accept-Encoding",
+                  "value": "gzip, deflate, br",
+                  "system": true
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive",
+                  "system": true
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "62",
+                  "system": true
+                }
+              ],
+              "method": "POST",
+              "body": {
+                "mode": "raw",
+                "raw": "{\r\n  \"email\": \"qauser@example.com\",\r\n  \"password\": \"1234\"\r\n}\r\n",
+                "options": {
+                  "raw": {
+                    "language": "json"
+                  }
+                }
+              }
+            },
+            "response": {
+              "id": "ee8dea4c-9245-43dd-b1d9-5fd8db308a87",
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Server",
+                  "value": "Werkzeug/3.1.3 Python/3.13.2"
+                },
+                {
+                  "key": "Date",
+                  "value": "Thu, 10 Apr 2025 18:10:22 GMT"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "59"
+                },
+                {
+                  "key": "Connection",
+                  "value": "close"
+                }
+              ],
+              "stream": {
+                "type": "Buffer",
+                "data": [
+                  123,
+                  10,
+                  32,
+                  32,
+                  34,
+                  109,
+                  101,
+                  115,
+                  115,
+                  97,
+                  103,
+                  101,
+                  34,
+                  58,
+                  32,
+                  34,
+                  76,
+                  111,
+                  103,
+                  105,
+                  110,
+                  32,
+                  115,
+                  117,
+                  99,
+                  99,
+                  101,
+                  115,
+                  115,
+                  102,
+                  117,
+                  108,
+                  34,
+                  44,
+                  10,
+                  32,
+                  32,
+                  34,
+                  115,
+                  116,
+                  97,
+                  116,
+                  117,
+                  115,
+                  34,
+                  58,
+                  32,
+                  34,
+                  115,
+                  117,
+                  99,
+                  99,
+                  101,
+                  115,
+                  115,
+                  34,
+                  10,
+                  125,
+                  10
+                ]
+              },
+              "cookie": [],
+              "responseTime": 10,
+              "responseSize": 59
+            },
+            "id": "c10861cb-47a2-48fa-95e3-c9860f3c3632"
+          }
+        ],
+        "transfers": {
+          "responseTotal": 265
+        },
+        "failures": [],
+        "error": null
+      }
+    }
+  },
+  "type": "postman"
+}

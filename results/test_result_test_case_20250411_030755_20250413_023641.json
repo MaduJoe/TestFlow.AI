@@ -1,0 +1,12 @@
+{
+  "id": "test_case_20250411_030755",
+  "desc": "잘못된 비밀번호로 로그인 시도 시 실패하는지 확인합니다.",
+  "result": "PASS",
+  "status_code": 401,
+  "body": {
+    "message": "로그인 실패: 아이디 또는 비밀번호가 일치하지 않습니다.",
+    "status": "failed"
+  },
+  "execution_time": "2025-04-13 02:36:41",
+  "env": "개발"
+}

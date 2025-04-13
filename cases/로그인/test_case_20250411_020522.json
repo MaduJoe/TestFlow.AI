@@ -1,0 +1,48 @@
+{
+  "id": "test_case_20250411_020522",
+  "method": "POST",
+  "test_case_id": "test_case_20250411_020522",
+  "title": "로그인 성공 테스트",
+  "description": "유효한 자격 증명으로 로그인에 성공하는지 확인합니다.",
+  "endpoint": "/api/login",
+  "url": "http://127.0.0.1:5001/api/login",
+  "expected_status": 200,
+  "expected_keyword": "success",
+  "body": {
+    "username": "testuser",
+    "password": "password123"
+  },
+  "headers": {
+    "Content-Type": "application/json"
+  },
+  "steps": [
+    {
+      "step_id": 1,
+      "action": "유효한 사용자 이름과 비밀번호를 입력합니다.",
+      "expected_result": "서버는 사용자 인증을 성공적으로 처리하고, 사용자에게 인증 토큰을 발급합니다."
+    },
+    {
+      "step_id": 2,
+      "action": "로그인 버튼을 클릭합니다.",
+      "expected_result": "서버로부터 인증 토큰을 포함한 성공적인 응답을 받습니다. (HTTP Status Code 200 OK)"
+    },
+    {
+      "step_id": 3,
+      "action": "사용자는 시스템에 성공적으로 로그인됩니다.",
+      "expected_result": "사용자는 메인 페이지 또는 대시보드로 리디렉션됩니다."
+    }
+  ],
+  "preconditions": [
+    "유효한 사용자 계정이 존재해야 합니다.",
+    "서버가 실행 중이어야 합니다."
+  ],
+  "postconditions": [
+    "사용자는 시스템에서 로그아웃 할 수 있습니다."
+  ],
+  "tags": [
+    "로그인",
+    "성공",
+    "인증",
+    "사용자"
+  ]
+}

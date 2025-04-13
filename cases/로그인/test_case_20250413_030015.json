@@ -1,0 +1,36 @@
+{
+  "id": "test_case_20250413_030015",
+  "method": "POST",
+  "test_case_id": "test_case_20250413_030015",
+  "title": "존재하지 않는 엔드포인트 호출 테스트",
+  "description": "존재하지 않는 API 엔드포인트를 호출하여 의도적으로 실패하는 테스트 케이스",
+  "endpoint": "/api/nonexistent",
+  "url": "http://127.0.0.1:5001/api/nonexistent",
+  "expected_status": 200,
+  "expected_keyword": "success",
+  "body": {
+    "username": "testuser",
+    "password": "password123"
+  },
+  "headers": {
+    "Content-Type": "application/json"
+  },
+  "steps": [
+    {
+      "step_id": 1,
+      "action": "존재하지 않는 엔드포인트로 로그인 요청 전송",
+      "expected_result": "404 오류 응답 수신"
+    }
+  ],
+  "preconditions": [
+    "API 서버가 실행 중이어야 합니다."
+  ],
+  "postconditions": [
+    "테스트 실패 기록이 생성됩니다."
+  ],
+  "tags": [
+    "로그인",
+    "오류",
+    "실패"
+  ]
+} 

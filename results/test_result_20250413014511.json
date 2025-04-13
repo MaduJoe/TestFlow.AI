@@ -1,0 +1,17 @@
+{
+  "id": "20250413014511",
+  "execution_time": "2025-04-13 01:45:11",
+  "env": "개발",
+  "results": [
+    {
+      "id": "test_case_20250412_214655",
+      "desc": "결제 실패 3회 이상 발생 시, 해당 계정이 잠기는지 확인합니다.",
+      "result": "ERROR",
+      "reason": "HTTPConnectionPool(host='localhost', port=8000): Max retries exceeded with url: / (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x000002271667B790>: Failed to establish a new connection: [WinError 10061] 대상 컴퓨터에서 연결을 거부했으므로 연결하지 못했습니다'))",
+      "execution_time": "2025-04-13 01:45:11",
+      "env": "개발"
+    }
+  ],
+  "type": "ai_collection",
+  "scheduled": false
+}

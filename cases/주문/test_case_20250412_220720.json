@@ -1,0 +1,59 @@
+{
+  "id": "test_case_20250412_220720",
+  "method": "POST",
+  "test_case_id": "test_case_20250412_220720",
+  "title": "재고 부족 상품 주문 시 오류 확인",
+  "description": "재고가 부족한 상품을 주문할 경우 적절한 오류가 발생하는지 확인",
+  "endpoint": "/api/orders",
+  "url": "http://127.0.0.1:5001/api/orders",
+  "expected_status": 400,
+  "expected_keyword": "insufficient stock",
+  "body": {
+    "product_id": "OUT_OF_STOCK_ITEM",
+    "quantity": 10,
+    "shipping_address": "서울시 강남구",
+    "payment_method": "card"
+  },
+  "headers": {
+    "Content-Type": "application/json",
+    "Authorization": "Bearer test-token"
+  },
+  "steps": [
+    {
+      "step_id": 1,
+      "action": "재고가 부족한 상품을 검색합니다.",
+      "expected_result": "상품 정보 페이지에 재고 수량이 표시됩니다."
+    },
+    {
+      "step_id": 2,
+      "action": "재고 수량보다 많은 수량을 입력합니다.",
+      "expected_result": "수량 입력 필드에 값이 표시됩니다."
+    },
+    {
+      "step_id": 3,
+      "action": "주문하기 버튼을 클릭합니다.",
+      "expected_result": "재고 부족 오류 메시지가 표시됩니다."
+    },
+    {
+      "step_id": 4,
+      "action": "주문 내역을 확인합니다.",
+      "expected_result": "주문이 생성되지 않았음을 확인합니다."
+    }
+  ],
+  "preconditions": [
+    "로그인된 상태여야 합니다.",
+    "재고가 부족한 상품이 존재해야 합니다.",
+    "사용자에게 주문 권한이 있어야 합니다."
+  ],
+  "postconditions": [
+    "주문이 생성되지 않아야 합니다.",
+    "상품의 재고는 변경되지 않아야 합니다.",
+    "사용자의 결제 수단으로 청구되지 않아야 합니다."
+  ],
+  "tags": [
+    "주문",
+    "재고",
+    "오류",
+    "예외처리"
+  ]
+}

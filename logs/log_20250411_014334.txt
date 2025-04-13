@@ -1,0 +1,9 @@
+{
+  "id": "TC_SIGNUP_FAIL_001",
+  "desc": "이미 가입된 이메일을 사용하여 회원가입을 시도할 경우 실패하는지 확인",
+  "status": "ERROR",
+  "body": "'method'",
+  "result": "ERROR",
+  "reason": "Exception occurred"
+}
+

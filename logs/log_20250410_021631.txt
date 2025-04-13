@@ -1,0 +1,9 @@
+{
+  "id": "TC001",
+  "desc": "\ud68c\uc6d0 \uac00\uc785 \uc131\uacf5 \uc5ec\ubd80 \ud655\uc778",
+  "status": 200,
+  "body": "{\n  \"message\": \"User registered\",\n  \"status\": \"success\"\n}\n",
+  "result": "PASS",
+  "reason": ""
+}
+

@@ -1,0 +1,42 @@
+{
+  "id": "test_case_20250413_030142",
+  "method": "POST",
+  "test_case_id": "test_case_20250413_030142",
+  "title": "잘못된 인증 정보로 결제 시도 테스트",
+  "description": "유효하지 않은 인증 토큰으로 결제를 시도하여 인증 에러가 발생하는지 확인",
+  "endpoint": "/api/payment",
+  "url": "http://127.0.0.1:5001/api/payment",
+  "expected_status": 200,
+  "expected_keyword": "success",
+  "body": {
+    "card_number": "5678-1234-5678-1234",
+    "expiry": "12/25",
+    "cvv": "123",
+    "amount": 10000
+  },
+  "headers": {
+    "Content-Type": "application/json",
+    "Authorization": "Bearer invalid-token"
+  },
+  "steps": [
+    {
+      "step_id": 1,
+      "action": "잘못된 인증 토큰으로 결제 API 호출",
+      "expected_result": "인증 실패 응답 수신 (401 Unauthorized)"
+    }
+  ],
+  "preconditions": [
+    "API 서버가 실행 중이어야 합니다.",
+    "인증 기능이 활성화되어 있어야 합니다."
+  ],
+  "postconditions": [
+    "결제가 처리되지 않아야 합니다.",
+    "인증 실패 이벤트가 기록되어야 합니다."
+  ],
+  "tags": [
+    "결제",
+    "인증",
+    "실패",
+    "보안"
+  ]
+} 

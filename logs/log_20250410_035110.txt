@@ -1,0 +1,9 @@
+{
+  "id": "TC001",
+  "desc": "회원 가입 성공 여부 확인",
+  "status": 200,
+  "body": "{\n  \"message\": \"User registered\",\n  \"status\": \"success\"\n}\n",
+  "result": "PASS",
+  "reason": ""
+}
+

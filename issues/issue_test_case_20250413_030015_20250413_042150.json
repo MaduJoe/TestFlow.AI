@@ -1,0 +1,15 @@
+{
+  "fields": {
+    "project": {
+      "key": "QA"
+    },
+    "summary": "테스트 케이스 실패: test_case_20250413_030015",
+    "description": "존재하지 않는 API 엔드포인트를 호출하여 의도적으로 실패하는 테스트 케이스\n\n결과: FAIL\n이유: No reason\n타임스탬프: 20250413_042150\n상태: OPEN",
+    "issuetype": {
+      "name": "Bug"
+    },
+    "jira_key": "QA-10",
+    "jira_url": "https://jaekeunv.atlassian.net//browse/QA-10",
+    "jira_synced": true
+  }
+}

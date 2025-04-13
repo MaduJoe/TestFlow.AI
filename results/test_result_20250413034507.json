@@ -1,0 +1,17 @@
+{
+  "id": "20250413034507",
+  "execution_time": "2025-04-13 03:45:07",
+  "env": "개발",
+  "results": [
+    {
+      "id": "test_case_20250413_030015",
+      "desc": "존재하지 않는 API 엔드포인트를 호출하여 의도적으로 실패하는 테스트 케이스",
+      "result": "ERROR",
+      "reason": "HTTPConnectionPool(host='127.0.0.1', port=5001): Max retries exceeded with url: /api/nonexistent (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x000001FB298A9FD0>: Failed to establish a new connection: [WinError 10061] 대상 컴퓨터에서 연결을 거부했으므로 연결하지 못했습니다'))",
+      "execution_time": "2025-04-13 03:45:07",
+      "env": "개발"
+    }
+  ],
+  "type": "ai_collection",
+  "scheduled": false
+}

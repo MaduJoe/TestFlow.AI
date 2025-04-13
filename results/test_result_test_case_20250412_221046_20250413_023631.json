@@ -1,0 +1,12 @@
+{
+  "id": "test_case_20250412_221046",
+  "desc": "결제 3회 실패 시 해당 계정이 잠기는지 확인하는 테스트 케이스",
+  "result": "PASS",
+  "status_code": 400,
+  "body": {
+    "message": "결제 실패: 유효하지 않은 카드 정보",
+    "status": "failed"
+  },
+  "execution_time": "2025-04-13 02:36:31",
+  "env": "개발"
+}

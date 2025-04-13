@@ -1,0 +1,9 @@
+{
+  "id": "TC001",
+  "desc": "회원 가입 성공 여부 확인",
+  "status": 400,
+  "body": "{\n  \"message\": \"User already exists\",\n  \"status\": \"fail\"\n}\n",
+  "result": "FAIL",
+  "reason": "Unexpected response"
+}
+

@@ -1,0 +1,56 @@
+{
+  "id": "test_case_20250412_221046",
+  "method": "POST",
+  "test_case_id": "test_case_20250412_221046",
+  "title": "결제 3회 실패 시 계정 잠금 테스트",
+  "description": "결제 3회 실패 시 해당 계정이 잠기는지 확인하는 테스트 케이스",
+  "endpoint": "/api/payment",
+  "url": "http://127.0.0.1:5001/api/payment",
+  "expected_status": 400,
+  "expected_keyword": "failed",
+  "body": {
+    "card_number": "1234-5678-9012-3456",
+    "expiry": "12/99",
+    "cvv": "000",
+    "amount": 10000
+  },
+  "headers": {
+    "Content-Type": "application/json",
+    "Authorization": "Bearer test-token"
+  },
+  "steps": [
+    {
+      "step_id": 1,
+      "action": "유효하지 않은 결제 정보로 1차 결제 시도",
+      "expected_result": "결제 실패, 실패 횟수 1회 증가"
+    },
+    {
+      "step_id": 2,
+      "action": "유효하지 않은 결제 정보로 2차 결제 시도",
+      "expected_result": "결제 실패, 실패 횟수 2회 증가"
+    },
+    {
+      "step_id": 3,
+      "action": "유효하지 않은 결제 정보로 3차 결제 시도",
+      "expected_result": "결제 실패, 계정 잠김, 실패 횟수 3회 (최대 횟수)"
+    },
+    {
+      "step_id": 4,
+      "action": "잠긴 계정으로 결제 시도",
+      "expected_result": "결제 실패, 계정 잠김 안내 메시지 확인"
+    }
+  ],
+  "preconditions": [
+    "테스트 계정 생성",
+    "결제 실패 횟수 설정 (예: 3회)"
+  ],
+  "postconditions": [
+    "테스트 계정 잠금 해제",
+    "실패 횟수 초기화"
+  ],
+  "tags": [
+    "결제",
+    "계정 잠금",
+    "보안"
+  ]
+}

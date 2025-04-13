@@ -1,0 +1,16 @@
+{
+    "id": "TC001",
+    "description": "회원 가입 성공 여부 확인",
+    "method": "POST",
+    "url": "http://localhost:5000/register",
+    "headers": {
+      "Content-Type": "application/json"
+    },
+    "body": {
+      "email": "qauser1@example.com",
+      "password": "1234"
+    },
+    "expected_status": 200,
+    "expected_keyword": "User registered"
+  }
+  

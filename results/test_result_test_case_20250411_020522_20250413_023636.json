@@ -1,0 +1,13 @@
+{
+  "id": "test_case_20250411_020522",
+  "desc": "유효한 자격 증명으로 로그인에 성공하는지 확인합니다.",
+  "result": "PASS",
+  "status_code": 200,
+  "body": {
+    "message": "로그인 성공",
+    "status": "success",
+    "token": "sample-token-123"
+  },
+  "execution_time": "2025-04-13 02:36:36",
+  "env": "개발"
+}

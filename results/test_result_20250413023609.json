@@ -1,0 +1,21 @@
+{
+  "id": "20250413023609",
+  "execution_time": "2025-04-13 02:36:09",
+  "env": "개발",
+  "results": [
+    {
+      "id": "test_case_20250412_214655",
+      "desc": "결제 실패 3회 이상 발생 시, 해당 계정이 잠기는지 확인합니다.",
+      "result": "PASS",
+      "status_code": 400,
+      "body": {
+        "message": "결제 실패: 유효하지 않은 카드 정보",
+        "status": "failed"
+      },
+      "execution_time": "2025-04-13 02:36:09",
+      "env": "개발"
+    }
+  ],
+  "type": "ai_collection",
+  "scheduled": false
+}

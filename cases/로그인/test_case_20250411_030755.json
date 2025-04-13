@@ -1,0 +1,54 @@
+{
+  "id": "test_case_20250411_030755",
+  "method": "POST",
+  "test_case_id": "test_case_20250411_030755",
+  "title": "잘못된 비밀번호로 로그인 실패 테스트",
+  "description": "잘못된 비밀번호로 로그인 시도 시 실패하는지 확인합니다.",
+  "endpoint": "/api/login",
+  "url": "http://127.0.0.1:5001/api/login",
+  "expected_status": 401,
+  "expected_keyword": "failed",
+  "body": {
+    "username": "testuser",
+    "password": "wrongpassword"
+  },
+  "headers": {
+    "Content-Type": "application/json"
+  },
+  "steps": [
+    {
+      "step_id": 1,
+      "action": "존재하는 사용자 이름을 입력합니다.",
+      "expected_result": "사용자 이름이 입력 필드에 표시됩니다."
+    },
+    {
+      "step_id": 2,
+      "action": "잘못된 비밀번호를 입력합니다.",
+      "expected_result": "비밀번호가 입력 필드에 표시됩니다."
+    },
+    {
+      "step_id": 3,
+      "action": "로그인 버튼을 클릭합니다.",
+      "expected_result": "로그인 실패 메시지가 표시됩니다. (예: \"잘못된 비밀번호입니다.\")"
+    },
+    {
+      "step_id": 4,
+      "action": "사용자는 로그인 페이지에 머물러 있습니다.",
+      "expected_result": "사용자는 로그인 페이지에서 여전히 로그인을 시도할 수 있습니다."
+    }
+  ],
+  "preconditions": [
+    "유효한 사용자 계정이 존재해야 합니다.",
+    "서버가 실행 중이어야 합니다."
+  ],
+  "postconditions": [
+    "로그인 실패 기록이 저장됩니다.",
+    "사용자는 다시 로그인을 시도할 수 있습니다."
+  ],
+  "tags": [
+    "로그인",
+    "실패",
+    "인증",
+    "보안"
+  ]
+}
