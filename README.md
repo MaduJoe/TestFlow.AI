@@ -115,6 +115,6 @@ streamlit run qa_ui/app.py
 
 ## 연락처
 
-Jaekeun Cho - [GitHub](https://github.com/MaduJoe) [Mail](jaekeunv@gmail.com)
+Jaekeun Cho - [GitHub](https://github.com/MaduJoe) / Mail : jaekeunv@gmail.com
 
 프로젝트 링크: [https://github.com/MaduJoe/kakaofy-qa](https://github.com/MaduJoe/kakaofy-qa) 
