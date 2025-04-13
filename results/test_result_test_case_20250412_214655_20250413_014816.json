@@ -1,9 +1,0 @@
-{
-  "id": "test_case_20250412_214655",
-  "desc": "결제 실패 3회 이상 발생 시, 해당 계정이 잠기는지 확인합니다.",
-  "result": "FAIL",
-  "status_code": 404,
-  "body": "<!doctype html>\n<html lang=en>\n<title>404 Not Found</title>\n<h1>Not Found</h1>\n<p>The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.</p>\n",
-  "execution_time": "2025-04-13 01:48:16",
-  "env": "개발"
-}

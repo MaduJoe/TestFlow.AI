@@ -674,26 +674,58 @@ elif menu == "결과 확인":
         
         # 보고서 생성
         if st.button("보고서 생성"):
-            report = generate_test_report(selected_run)
-            if report:
-                # 보고서 내용 표시
-                st.markdown(report)
+            with st.spinner("보고서를 생성 중입니다..."):
+                # 선택된 실행 ID 추출 (형식: "ID - 실행시간 - 타입: 타입명")
+                parts = selected_run.split(" - ")
+                run_id = parts[0] if parts else selected_run
                 
-                # PDF 생성 및 다운로드 버튼
-                pdf_content = convert_report_to_pdf(report)
-                if pdf_content:
-                    timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
-                    file_name = f"test_report_{timestamp}.pdf"
-                    st.download_button(
-                        "보고서 다운로드",
-                        pdf_content,
-                        file_name,
-                        "application/pdf"
-                    )
+                print(f"선택된 실행: {selected_run}")
+                print(f"추출된 ID: {run_id}")
+                
+                # 파일 경로 조회 (여러 가능한 형식 시도)
+                result_files = [
+                    os.path.join("results", f"test_result_{run_id}.json"),  # 기본 형식
+                    os.path.join("results", f"{run_id}.json"),              # 단순 ID
+                    # 폴더 내 파일 검색
+                    *[os.path.join("results", f) for f in os.listdir("results") if f.endswith(".json") and run_id in f]
+                ]
+                
+                # 존재하는 파일 찾기
+                result_file = None
+                for file_path in result_files:
+                    if os.path.exists(file_path):
+                        result_file = file_path
+                        break
+                
+                if result_file:
+                    try:
+                        # 결과 파일 경로를 명시적으로 전달
+                        report = generate_test_report(selected_run, result_file_path=result_file)
+                        if report:
+                            # 보고서 내용 표시
+                            st.markdown(report)
+                            
+                            # PDF 생성 및 다운로드 버튼
+                            pdf_content = convert_report_to_pdf(report)
+                            if pdf_content:
+                                timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
+                                file_name = f"test_report_{timestamp}.pdf"
+                                st.download_button(
+                                    "보고서 다운로드",
+                                    pdf_content,
+                                    file_name,
+                                    "application/pdf"
+                                )
+                            else:
+                                st.error("PDF 생성 중 오류가 발생했습니다.")
+                        else:
+                            st.error("보고서 생성 중 오류가 발생했습니다. 데이터 형식을 확인해주세요.")
+                    except Exception as e:
+                        st.error(f"보고서 생성 중 오류가 발생했습니다: {str(e)}")
                 else:
-                    st.error("PDF 생성 중 오류가 발생했습니다.")
-            else:
-                st.error("보고서를 생성할 수 없습니다. 테스트 결과 파일이 올바른 형식인지 확인해주세요.")
+                    st.error(f"테스트 결과 파일을 찾을 수 없습니다: {run_id}")
+                    st.info("참고: results 폴더에 해당 ID를 포함하는 JSON 파일이 있는지 확인해주세요.")
+            
     else:
         st.info("테스트 실행 이력이 없습니다.")
 

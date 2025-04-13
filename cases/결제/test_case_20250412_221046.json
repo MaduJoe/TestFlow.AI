@@ -52,5 +52,6 @@
     "결제",
     "계정 잠금",
     "보안"
-  ]
+  ],
+  "test_type": "ai_collection"
 }
