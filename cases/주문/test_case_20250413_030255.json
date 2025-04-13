@@ -1,5 +1,6 @@
 {
   "id": "test_case_20250413_030255",
+  "type": "ai_collection",
   "method": "POST",
   "test_case_id": "test_case_20250413_030255",
   "title": "잘못된 형식의 주문 데이터로 요청 테스트",
@@ -36,5 +37,6 @@
     "유효성 검사",
     "실패",
     "입력 오류"
-  ]
-} 
+  ],
+  "test_type": "ai_collection"
+}

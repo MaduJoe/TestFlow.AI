@@ -67,7 +67,8 @@ class TestCaseGenerator:
             ],
             "preconditions": ["전제 조건"],
             "postconditions": ["후행 조건"],
-            "tags": ["테스트"]
+            "tags": ["테스트"],
+            "test_type": "ai_collection"  # 기본 테스트 타입을 ai_collection으로 설정
         }
 
     def generate_test_case(self, natural_language_request):
@@ -98,13 +99,15 @@ class TestCaseGenerator:
                 ],
                 "preconditions": ["전제 조건"],
                 "postconditions": ["후행 조건"],
-                "tags": ["태그1", "태그2"]
+                "tags": ["태그1", "태그2"],
+                "test_type": "ai_collection"
             }}
 
             주의사항:
             1. id와 test_case_id는 동일한 값이어야 합니다.
             2. method는 반드시 GET, POST, PUT, DELETE 중 하나여야 합니다.
             3. steps 배열에는 최소 하나 이상의 단계가 포함되어야 합니다.
+            4. test_type은 반드시 "ai_collection"으로 설정해야 합니다.
             """
 
             # Gemini API 호출
@@ -155,6 +158,10 @@ class TestCaseGenerator:
         # 테스트 케이스 ID 생성
         test_case_id = f"test_case_{datetime.now().strftime('%Y%m%d_%H%M%S')}"
         test_case["id"] = test_case_id
+        
+        # test_type이 설정되지 않았으면 기본값으로 설정
+        if "test_type" not in test_case:
+            test_case["test_type"] = "ai_collection"
         
         # title을 분석하여 적절한 기능 폴더 결정
         title = test_case.get("title", "").lower()

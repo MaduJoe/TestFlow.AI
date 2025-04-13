@@ -44,5 +44,6 @@
     "성공",
     "인증",
     "사용자"
-  ]
+  ],
+  "test_type": "ai_collection"
 }

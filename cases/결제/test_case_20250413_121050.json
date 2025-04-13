@@ -1,0 +1,54 @@
+{
+  "id": "test_case_20250413_121050",
+  "method": "POST",
+  "test_case_id": "TC_1700000000",
+  "title": "사용자 로그인 후 장바구니 상품 추가 및 결제",
+  "description": "사용자가 로그인 후 장바구니에 상품을 추가하고 결제를 완료하는 시나리오를 검증합니다.",
+  "steps": [
+    {
+      "step_id": 1,
+      "action": "사용자 로그인 API 호출 (POST /login)",
+      "expected_result": "200 OK 응답, 유효한 access token 발급"
+    },
+    {
+      "step_id": 2,
+      "action": "상품 정보 조회 API 호출 (GET /products/{product_id})",
+      "expected_result": "200 OK 응답, 상품 정보 확인"
+    },
+    {
+      "step_id": 3,
+      "action": "장바구니에 상품 추가 API 호출 (POST /cart/add)",
+      "expected_result": "201 Created 응답, 상품이 장바구니에 추가됨, 장바구니 상품 개수 증가 확인"
+    },
+    {
+      "step_id": 4,
+      "action": "장바구니 정보 조회 API 호출 (GET /cart)",
+      "expected_result": "200 OK 응답, 장바구니에 추가된 상품 정보 확인 (상품 ID, 수량 등)"
+    },
+    {
+      "step_id": 5,
+      "action": "결제 API 호출 (POST /checkout)",
+      "expected_result": "200 OK 응답, 결제 성공, 결제 내역 생성"
+    },
+    {
+      "step_id": 6,
+      "action": "결제 내역 조회 API 호출 (GET /orders)",
+      "expected_result": "200 OK 응답, 결제 내역 확인 (주문 상태: 완료)"
+    }
+  ],
+  "preconditions": [
+    "유효한 사용자 계정 존재",
+    "상품 정보 데이터 준비"
+  ],
+  "postconditions": [
+    "결제 완료 상태",
+    "장바구니 비어있음"
+  ],
+  "tags": [
+    "로그인",
+    "장바구니",
+    "결제",
+    "E2E"
+  ],
+  "test_type": "ai_collection"
+}

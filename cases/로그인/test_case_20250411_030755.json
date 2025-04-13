@@ -50,5 +50,6 @@
     "실패",
     "인증",
     "보안"
-  ]
+  ],
+  "test_type": "ai_collection"
 }
