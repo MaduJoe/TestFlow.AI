@@ -82,8 +82,8 @@ AI 기반 테스트 케이스 생성 기능과 Postman 기반의 자동화 테�
 
 ```bash
 # 저장소 클론
-git clone https://github.com/MaduJoe/kakaofy-qa.git
-cd kakaofy-qa
+git clone https://github.com/MaduJoe/QA-Automation-Framework.git
+cd QA-Automation-Framework
 
 # Python 의존성 설치
 pip install -r requirements.txt
@@ -139,6 +139,6 @@ MIT License 하에 배포됩니다.
 **Jaekeun Cho**  
 🔗 [GitHub](https://github.com/MaduJoe)  
 📧 jaekeunv@gmail.com  
-📁 프로젝트 링크: [github.com/MaduJoe/kakaofy-qa](https://github.com/MaduJoe/QA-Automation-Framework)
+📁 프로젝트 링크: [github.com/MaduJoe/QA-Automation-Framework](https://github.com/MaduJoe/QA-Automation-Framework)
 
 ---
