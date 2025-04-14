@@ -139,6 +139,6 @@ MIT License 하에 배포됩니다.
 **Jaekeun Cho**  
 🔗 [GitHub](https://github.com/MaduJoe)  
 📧 jaekeunv@gmail.com  
-📁 프로젝트 링크: [github.com/MaduJoe/kakaofy-qa](https://github.com/MaduJoe/kakaofy-qa)
+📁 프로젝트 링크: [github.com/MaduJoe/kakaofy-qa](https://github.com/MaduJoe/QA-Automation-Framework)
 
 ---
