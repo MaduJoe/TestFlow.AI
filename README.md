@@ -1,7 +1,6 @@
+# 🧪 TestFlow with AI
 
-# 🧪 QA Automation Framework
-
-**QA Automation Framework**는 테스트 케이스의 생성부터 실행, 결과 분석, 보고서 생성까지 QA 업무 전반을 자동화하는 플랫폼입니다.  
+**TestFlow.AI**는 테스트 케이스의 생성부터 실행, 결과 분석, 보고서 생성까지 QA 업무 전반을 수행할 수 있는 플랫폼입니다.  
 AI 기반 테스트 케이스 생성 기능과 Postman 기반의 자동화 테스트 실행을 통합하여, 빠르고 신뢰성 높은 품질 보증 프로세스를 제공합니다.
 
 ---
@@ -82,8 +81,8 @@ AI 기반 테스트 케이스 생성 기능과 Postman 기반의 자동화 테�
 
 ```bash
 # 저장소 클론
-git clone https://github.com/MaduJoe/QA-Automation-Framework.git
-cd QA-Automation-Framework
+git clone https://github.com/MaduJoe/TestFlow.AI.git
+cd TestFlow.AI
 
 # Python 의존성 설치
 pip install -r requirements.txt
@@ -132,6 +131,6 @@ Pull Request와 Issue 환영합니다!
 **Jaekeun Cho**  
 🔗 [GitHub](https://github.com/MaduJoe)  
 📧 jaekeunv@gmail.com  
-📁 프로젝트 링크: [github.com/MaduJoe/QA-Automation-Framework](https://github.com/MaduJoe/QA-Automation-Framework)
+📁 프로젝트 링크: [github.com/MaduJoe/TestFlow.AI](https://github.com/MaduJoe/TestFlow.AI)
 
 ---
