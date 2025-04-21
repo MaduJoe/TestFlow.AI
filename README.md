@@ -119,12 +119,12 @@ python app/main.py
 
 | 영역 | 기술 |
 |------|------|
-| Backend | Python, FastAPI |
+| Backend | Python, Flask |
 | Frontend | Streamlit |
 | AI | Google Gemini API |
 | Test Automation | Requests, Newman (Postman CLI) |
 | Data Visualization | Plotly, Altair |
-| Integration | JIRA API, Slack Webhooks |
+| Integration | JIRA API |
 
 ---
 
